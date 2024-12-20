@@ -1,0 +1,31 @@
+
+# R related project folders
+*.Rproj
+/.Rproj.user
+
+# raw data
+*.mat
+
+# raw data folders
+/data/raw/*/
+
+# codebook
+data/codebook/*.xlsx
+data/codebook/*.csv
+data/codebook_exp2/*.xlsx
+
+# temporary to prevent a mistake later
+/data/processed 
+/data
+/output
+
+# R data files
+*.RData
+*.Rhistory
+
+# Drake cache
+*.drake
+*.DS_Store
+*.png
+Rplots.pdf
+Rplots.pdf

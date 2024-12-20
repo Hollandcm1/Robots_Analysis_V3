@@ -1,0 +1,12 @@
+Pg = position of the goal. added a box around it using rg.
+Po = position of the obstacles
+X1 = the first two columns are position of robot, third column is the yaw or heading of the robot (in radians I think)
+X_L = position of leader,  third column is the yaw or heading of the leader (in radians I think)
+Adaptive_gains = These are used to control the haptic feedback. Basically, they increase as the error between the robot and leader increases.
+dX1 = velocity of the robot [x, y, yaw]
+Force_input = the amount of force the user was putting on the machine
+Order = map/condition order
+r = the x y z (position) and dx dy dz (velocity) of the joystick end point. Where the user is positioning the device.
+Rg = size of the box around the goal, Pg
+T = time
+Vw1 = this is the linear and angular velocity of the robot. so not in the x y frame.

@@ -1,0 +1,276 @@
+---
+title: "LME_report"
+output: html_document
+date: "2024-06-28"
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(sjPlot)
+library(ggplot2)
+library(flexplot)
+library(here)
+```
+# Load The Data
+```{r, echo=FALSE}
+load(here("output","Strategic_Models","all_average_by_trial.RData"))
+all_average_by_trial <- average_by_trial
+load(here("output","Strategic_Models","no_haptic_average_by_trial.RData"))
+no_haptic_average_by_trial <- average_by_trial
+print('Done')
+```
+
+# Load All Models
+```{r, echo=FALSE}
+load(here("output","Strategic_Models","all_models.RData"))
+all_models <- models
+load(here("output","Strategic_Models","no_haptic_models.RData"))
+no_haptic_models <- models
+print('Done')
+```
+
+# Everything Model
+```{r, echo=FALSE, message=FALSE}
+model <- all_models[[1]]
+f <- formula(model)
+print(f)
+s <- summary(model)
+print(s)
+```
+
+# Base Model
+```{r, include=FALSE}
+model <- all_models[[2]]
+f <- formula(model)
+print(f)
+s <- summary(model)
+print(s)
+print('Done')
+```
+
+# Time ~ Haptic
+```{r, echo=FALSE}
+model <- all_models[[3]]
+f <- formula(model)
+print(f)
+s <- summary(model)
+print(s)
+
+flexplot(data = all_average_by_trial, time_through_maze ~ haptic)
+```
+
+# Time ~ Visual
+```{r, echo=FALSE}
+model <- all_models[[4]]
+f <- formula(model)
+print(f)
+s <- summary(model)
+print(s)
+
+flexplot(data = all_average_by_trial, time_through_maze ~ visual)
+```
+
+# Time ~ Haptic * Visual 
+```{r, echo=FALSE}
+model <- all_models[[5]]
+f <- formula(model)
+print(f)
+s <- summary(model)
+print(s)
+
+flexplot(data = all_average_by_trial, time_through_maze ~ haptic + visual)
+```
+
+# Time ~ Collaborative
+```{r, echo=FALSE}
+model <- all_models[[6]]
+f <- formula(model)
+print(f)
+s <- summary(model)
+print(s)
+
+flexplot(data = all_average_by_trial, time_through_maze ~ collaborative)
+```
+
+# Time ~ Haptic * Visual * Collaborative (Not a good model)
+```{r, echo=FALSE}
+model <- all_models[[7]]
+f <- formula(model)
+print(f)
+s <- summary(model)
+print(s)
+
+# flexplot(data = all_average_by_trial, time_through_maze ~ visual)
+```
+
+# Time ~ Haptic * Visual * Path Length
+```{r, echo=FALSE}
+model <- all_models[[8]]
+f <- formula(model)
+print(f)
+s <- summary(model)
+print(s)
+
+flexplot(data = all_average_by_trial, time_through_maze ~ path_length, method = 'lm')
+flexplot(data = all_average_by_trial, time_through_maze ~ visual + path_length)
+flexplot(data = all_average_by_trial, time_through_maze ~ haptic + path_length)
+
+```
+
+# Time ~ Map
+```{r, echo=FALSE}
+model <- all_models[[9]]
+f <- formula(model)
+print(f)
+s <- summary(model)
+print(s)
+
+flexplot(data = all_average_by_trial, time_through_maze ~ map_factor)
+```
+
+# Time ~ Visual * Haptic * Map (possible)
+```{r, echo=FALSE}
+model <- all_models[[10]]
+f <- formula(model)
+print(f)
+s <- summary(model)
+print(s)
+
+flexplot(data = all_average_by_trial, time_through_maze ~ visual + map_factor)
+
+```
+
+# Path Length ~ Map
+```{r, echo=FALSE}
+model <- all_models[[11]]
+f <- formula(model)
+print(f)
+s <- summary(model)
+print(s)
+
+flexplot(data = all_average_by_trial, path_length ~ map_factor)
+
+```
+
+# Everything Model (Only Haptic - not a good model)
+```{r, echo=FALSE}
+model <- no_haptic_models[[1]]
+f <- formula(model)
+print(f)
+s <- summary(model)
+print(s)
+
+flexplot(data = no_haptic_average_by_trial, time_through_maze ~ visual)
+```
+
+# Base (Only Haptic)
+```{r, echo=FALSE, include=FALSE}
+model <- no_haptic_models[[2]]
+f <- formula(model)
+print(f)
+s <- summary(model)
+print(s)
+
+print("Done")
+```
+
+# Time ~ Visual (Only Haptic)
+```{r, echo=FALSE}
+model <- no_haptic_models[[3]]
+f <- formula(model)
+print(f)
+s <- summary(model)
+print(s)
+
+flexplot(data = no_haptic_average_by_trial, time_through_maze ~ visual)
+```
+
+# Time ~ Collaborative (Only Haptic)
+```{r, echo=FALSE}
+model <- no_haptic_models[[4]]
+f <- formula(model)
+print(f)
+s <- summary(model)
+print(s)
+
+flexplot(data = all_average_by_trial, time_through_maze ~ collaborative)
+```
+
+# Time ~ Visual * Collaborative (Only Haptic - not a good model)
+```{r, echo=FALSE}
+model <- no_haptic_models[[5]]
+f <- formula(model)
+print(f)
+s <- summary(model)
+print(s)
+
+flexplot(data = all_average_by_trial, time_through_maze ~ collaborative)
+```
+
+# Time ~ Visual * Path Length (Only Haptic - nothing new here)
+```{r, echo=FALSE}
+model <- no_haptic_models[[6]]
+f <- formula(model)
+print(f)
+s <- summary(model)
+print(s)
+
+#flexplot(data = all_average_by_trial, time_through_maze ~ path_length, method='lm')
+```
+
+# Time ~ Map (Only Haptic - nothing new here)
+```{r, echo=FALSE}
+model <- no_haptic_models[[7]]
+f <- formula(model)
+print(f)
+s <- summary(model)
+print(s)
+
+#flexplot(data = all_average_by_trial, time_through_maze ~ collaborative)
+```
+
+# Time ~ Visual * Map (Only Haptic - nothing new here)
+```{r, echo=FALSE}
+model <- no_haptic_models[[8]]
+f <- formula(model)
+print(f)
+s <- summary(model)
+print(s)
+
+flexplot(data = all_average_by_trial, time_through_maze ~ collaborative)
+```
+
+# Time ~ Visual * Map + Collaborative (Only Haptic - not a good model)
+```{r, echo=FALSE}
+model <- no_haptic_models[[9]]
+f <- formula(model)
+print(f)
+s <- summary(model)
+print(s)
+
+flexplot(data = all_average_by_trial, time_through_maze ~ collaborative)
+```
+
+# Path Length ~ Collaborative (Only Haptic)
+```{r, echo=FALSE}
+model <- no_haptic_models[[10]]
+f <- formula(model)
+print(f)
+s <- summary(model)
+print(s)
+
+flexplot(data = all_average_by_trial, path_length ~ collaborative)
+```
+
+# Path Length ~ Visual * Collaborative (Only Haptic - not a good model)
+```{r, echo=FALSE}
+model <- no_haptic_models[[11]]
+f <- formula(model)
+print(f)
+s <- summary(model)
+print(s)
+
+flexplot(data = all_average_by_trial, time_through_maze ~ collaborative)
+```
+
