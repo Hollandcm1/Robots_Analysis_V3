@@ -1,65 +1,67 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-all_trials_force_by_proximity_plots|stem|17656ca132f3e9f7|2e570250b33f5ae8|990aeadfbf3a80de|-1429141143||t20077.7234318037s|a1c456b03adbfbf8|44|rds|local|vector|||26.861|Removed 114 rows containing missing values or values outside the scale rangegeom_point.|
-all_trials_force_plots|stem|17656ca132f3e9f7|64525d6e13a98b26|bc2a88f59271a67f|1788925748||t20077.723120872s|a1c456b03adbfbf8|44|rds|local|vector|||25.754|Removed 114 rows containing missing values or values outside the scale rangegeom_point.|
-all_trials_plots|stem|2c5c72b25e367592|618daee7dae971bd|d46c8b4e519aace1|102458737||t20077.7512513252s|41200f7f0df0ebd3|96|rds|local|vector|||20.808|Removed 114 rows containing missing values or values outside the scale rangegeom_point.|
-append_strategic_behaviour|function|36a2d85e58f426bb|||||||||||||||
-average_force_ANVOA|stem|17cb3073de5a4077|e0cbba89a6b1b882|fa8fc9646d98fdb3|-662371750||t20077.722798996s|41200f7f0df0ebd3|96|rds|local|vector|||1.235|GG Corrections not yet working|
-average_force_Regression|stem|e87a5862ae4baaec|9f4df7f351a300a1|180db94894e17935|2005063396||t20077.7227533218s|f03314691db89012|182|rds|local|vector|||3.894||
-bad_trials_removed_data|stem|bc340f738e81c252|cdc4150054f31de7|efaaffb731cda005|1518844584||t20077.7196764006s|64062c89359cacce|30765304|rds|local|vector|||0.007|No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment|
-build_data_long|function|4f91e729a94c9b37|||||||||||||||
-build_data_long_exp2|function|f54a65dcfe3bf0a4|||||||||||||||
-codes|stem|13a0735fbb97ad8a|52248ed81e586d7a|06bcaba64e646541|49896712||t20075.070004497s|ac227466d022b892|408|rds|local|vector|||0.01||
-codes_conditions|stem|5488af83816975aa|65fe4e654b0df260|b16c155e03368196|-1842333379||t20075.0700045642s|4a62745a16bcf9e1|179|rds|local|vector|||0||
-codes_participant_conditions|stem|45ab0b2a18ae3caa|4a0e43212429405c|b16c155e03368196|-1191489143||t20075.0700045301s|b1e85e08060e9f38|321|rds|local|vector|||0||
-combined_analysis|function|5e31da2aa9a9f98d|||||||||||||||
-compiled_data|stem|10e33e3a32f44e6a|00e231a90f3feedf|606cc203a0c88026|17359695||t20075.070064873s|d15b736bcd0e3558|33137461|rds|local|vector|||4.141|No element named order found in the list.. No element named order found in the list.. No element named order found in the list.. No element named order found in the list.. No element named order found in the list.. No element named order found in the list.|
-condense_data|function|d0d5a18033b48b07|||||||||||||||
-condense_data_exp2|function|b63b0dcc9b1a698f|||||||||||||||
-conditions|object|c9526a266010cb89|||||||||||||||
-corrected_data|stem|bc340f738e81c252|322ccac7e74bc61e|0fbb8ea93b4bcfdb|600236696||t20075.0700808359s|64062c89359cacce|30765304|rds|local|vector|||0.114|participant 5 has too little data. participant 6 has too little data. participant 7 has too little data. NAs introduced by coercion. NAs introduced by coercion. NAs introduced by coercion. NAs introduced by coercion. NAs introduced by coercion. NAs introduced by coercion|
-create_standard_figures|function|6aee151a55de4df3|||||||||||||||
-data_long|stem|293548aa4e668514|352bfb165c12f097|45a3aa7d361da6d0|1218221069||t20077.719704054s|22c708f7a62e6d1c|12542177|rds|local|vector|||1.943|Participant 6 Trial P6_9 has no force data|
-data_long_calculated|stem|90a676fba5b24b52|36977e5defc94263|aa89cc279927541d|964209018||t20077.7225318111s|9558d685b7805674|18747951|rds|local|vector|||243.628|number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number o|
-data_long_calculations|function|aa35d43ce8064d86|||||||||||||||
-environments|object|350f6dd04927ef03|||||||||||||||
-explore_data|stem|c84b3bc5f5f63b4d|de044033e091d133|d303b91520bf616c|-319760588||t20077.7513137954s|fad8472ff42b9b57|176|rds|local|vector|||5.278||
-explore_data_long|function|ab7b1f4af738682f|||||||||||||||
-flag_possible_fighting|function|67e3b64cea1f8e76|||||||||||||||
-import_codebook|function|7d7a74ddda81f55a|||||||||||||||
-import_codebook_exp2|function|6ac1fc745e3ea2c2|||||||||||||||
-import_strategic_data|function|c5e985eacfffa811|||||||||||||||
-LME_analysis_exp2|function|67d413972851470f|||||||||||||||
-maps|stem|3743b54c9a621638|17590690ccf01c0e|fc1d987701dc7445|-755393448||t20075.0700673224s|09f4038811cf35c8|924|rds|local|vector|||0.198||
-maps_plotted|stem|e45727f10764560c|8afc91f0271e9881|3360e2acc2a9d007|678691449||t20075.0700954849s|41200f7f0df0ebd3|96|rds|local|vector|||1.254||
-mark_within_maze|function|e321925ad87480d5|||||||||||||||
-mark_within_maze_exp2|function|d9b90c5ef5252b86|||||||||||||||
-max_force_ANVOA|stem|2ef05d25fcf5e7cc|226a09d53648025f|ab7ff5b369d61441|1385852449||t20077.7226057226s|9712f9cb4307e5f0|183|rds|local|vector|||1.27||
-max_force_Regression|stem|e695881ff706e2da|78838e72742e55d8|e42389e2820b525e|148351005||t20077.7225909909s|4a62745a16bcf9e1|179|rds|local|vector|||5.104||
-participant_error_correction|function|84bd88ae3dd3e755|||||||||||||||
-participant_error_correction_exp2|function|157ba2427d1c9fc3|||||||||||||||
-plot_all_trial_force|function|9e3ae741b447ff9b|||||||||||||||
-plot_all_trial_force_and_proximity|function|d84f648521fb33a0|||||||||||||||
-plot_all_trial_force_by_proximity|function|68201d481157d041|||||||||||||||
-plot_all_trials|function|cbb9b886b4e2fd76|||||||||||||||
-plot_maps|function|8525349ec26b120c|||||||||||||||
-plot_trial_by_velocity|function|abd19bc776987539|||||||||||||||
-plot_within_maze|function|a58086957a467b88|||||||||||||||
-possible_fighting_flagged_data|stem|6c5aa1b912ef3a0c|7455597ef18eec66|a2ebef9271084f92|-1091193653||t20077.7227081449s|af016902d9b42dc6|18756672|rds|local|vector|||8.151|no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max return|
-proximity_calculation|function|ad273dd89c44cdef|||||||||||||||
-pull_maps|function|3f3e66e766f52ef6|||||||||||||||
-remove_bad_trials|function|685a1aeab05f4cf0|||||||||||||||
-remove_bad_trials_exp2|function|e2f51b4d9898f535|||||||||||||||
-rename_list_element|function|6fb2aa788f900467|||||||||||||||
-rotations|object|b3e51bc7a718810f|||||||||||||||
-run_ANOVA_average_force|function|983956bf69e34466|||||||||||||||
-run_ANOVA_max_force|function|f2b594067e88e1fe|||||||||||||||
-run_ANOVA_velocity|function|cc9c78f54f235978|||||||||||||||
-run_Regression_average_force|function|04a946752536726b|||||||||||||||
-run_Regression_max_force|function|4d273ee182a1543b|||||||||||||||
-strategic_data|stem|0894ce84fbec6d8b|a306df01f84e6aa9|070f9b4afa19b8c0|35737524||t20075.0700042768s|5e5dfa0d9a86b797|2032|rds|local|vector|||0.981||
-strategic_data_appended|stem|05e199fe88fad215|e2efbf754f1fcf5a|9d3e03a67bb9c35e|93320221||t20077.7228226693s|5b97b27101e3d530|18770422|rds|local|vector|||0.028||
-strategic_LME_analysis|function|87c21bb13515f6e3|||||||||||||||
-strategic_LME_analysis_only_haptic|function|35414bf7d2925608|||||||||||||||
-strategic_LME_analysis_only_haptic_results|stem|ee01796f324373b6|020d032660f45073|302249057006f9db|389923158||t20077.7234921602s|4c8c4ccfc20faf0c|19084711|rds|local|vector|||4.421|the standard deviation is zero|
-strategic_LME_analysis_results|stem|d03929053b23dfa9|a713b0e22bed79f2|86d6d8e051fe1b63|664286812||t20077.7235617681s|f12a2f0b36706ac3|19300424|rds|local|vector|||5.223||
-velocity_ANVOA|stem|24227a6610ed981a|86f352ffdc2b1cb5|aa92f4e41945a243|186725231||t20077.7228141212s|334ec4c391c6746c|186|rds|local|vector|||1.303||
+mark_within_maze_exp2|function|d9b90c5ef5252b86
+import_codebook|function|7d7a74ddda81f55a
+append_strategic_behaviour|function|36a2d85e58f426bb
+run_ANOVA_average_force|function|983956bf69e34466
+explore_data_long|function|ab7b1f4af738682f
+rename_list_element|function|6fb2aa788f900467
+plot_all_trial_force_and_proximity|function|d84f648521fb33a0
+strategic_LME_analysis|function|87c21bb13515f6e3
+import_codebook_exp2|function|6ac1fc745e3ea2c2
+run_ANOVA_max_force|function|f2b594067e88e1fe
+plot_trial_by_velocity|function|abd19bc776987539
+plot_maps|function|8525349ec26b120c
+import_strategic_data|function|c5e985eacfffa811
+create_standard_figures|function|6aee151a55de4df3
+plot_within_maze|function|a58086957a467b88
+combined_analysis|function|5e31da2aa9a9f98d
+proximity_calculation|function|ad273dd89c44cdef
+build_data_long|function|4f91e729a94c9b37
+run_Regression_average_force|function|04a946752536726b
+run_Regression_max_force|function|4d273ee182a1543b
+pull_maps|function|3f3e66e766f52ef6
+LME_analysis_exp2|function|67d413972851470f
+environments|object|350f6dd04927ef03
+run_ANOVA_velocity|function|cc9c78f54f235978
+remove_bad_trials_exp2|function|e2f51b4d9898f535
+build_data_long_exp2|function|f54a65dcfe3bf0a4
+plot_all_trials_velocity|function|65c1a878f23f4b72
+mark_within_maze|function|e321925ad87480d5
+conditions|object|c9526a266010cb89
+plot_all_trial_force_by_proximity|function|68201d481157d041
+rotations|object|b3e51bc7a718810f
+remove_bad_trials|function|685a1aeab05f4cf0
+plot_all_trial_force|function|9e3ae741b447ff9b
+strategic_LME_analysis_only_haptic|function|35414bf7d2925608
+flag_possible_fighting|function|67e3b64cea1f8e76
+condense_data|function|d0d5a18033b48b07
+condense_data_exp2|function|b63b0dcc9b1a698f
+participant_error_correction_exp2|function|157ba2427d1c9fc3
+participant_error_correction|function|b718b457ca01320e
+plot_all_trials|function|cbb9b886b4e2fd76
+data_long_calculations|function|aa35d43ce8064d86
+strategic_data|stem|0894ce84fbec6d8b|a306df01f84e6aa9|070f9b4afa19b8c0|35737524||t20078.7865181585s|5e5dfa0d9a86b797|2032|rds|local|vector|||1.002||
+codes|stem|13a0735fbb97ad8a|52248ed81e586d7a|06bcaba64e646541|49896712||t20078.7865183793s|ac227466d022b892|408|rds|local|vector|||0.01||
+codes_conditions|stem|5488af83816975aa|65fe4e654b0df260|b16c155e03368196|-1842333379||t20078.786518414s|4a62745a16bcf9e1|179|rds|local|vector|||0||
+codes_participant_conditions|stem|45ab0b2a18ae3caa|4a0e43212429405c|b16c155e03368196|-1191489143||t20078.7865184462s|b1e85e08060e9f38|321|rds|local|vector|||0||
+maps|stem|3743b54c9a621638|17590690ccf01c0e|fc1d987701dc7445|-755393448||t20078.786522883s|09f4038811cf35c8|924|rds|local|vector|||0.38||
+compiled_data|stem|10e33e3a32f44e6a|00e231a90f3feedf|606cc203a0c88026|17359695||t20078.7865843273s|d15b736bcd0e3558|33137461|rds|local|vector|||4.227|No element named order found in the list.. No element named order found in the list.. No element named order found in the list.. No element named order found in the list.. No element named order found in the list.. No element named order found in the list.|
+maps_plotted|stem|389f3fdfdcbd660d|8afc91f0271e9881|3360e2acc2a9d007|678691449||t20078.7865992468s|41200f7f0df0ebd3|96|rds|local|vector|||1.277||
+corrected_data|stem|bc340f738e81c252|322ccac7e74bc61e|88e070cdce947074|600236696||t20078.7866123882s|64062c89359cacce|30765304|rds|local|vector|||0.118|participant 5 has too little data. participant 6 has too little data. participant 7 has too little data. NAs introduced by coercion. NAs introduced by coercion. NAs introduced by coercion. NAs introduced by coercion. NAs introduced by coercion. NAs introduced by coercion|
+bad_trials_removed_data|stem|bc340f738e81c252|cdc4150054f31de7|efaaffb731cda005|1518844584||t20078.7866245603s|64062c89359cacce|30765304|rds|local|vector|||0.007|No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment the code to remove trials.. No trials are being removed. Uncomment|
+all_trials_plots|stem|c6fe4d12a85db439|618daee7dae971bd|d46c8b4e519aace1|102458737||t20078.786846667s|41200f7f0df0ebd3|96|rds|local|vector|||19.178|Removed 114 rows containing missing values or values outside the scale rangegeom_point.|
+data_long|stem|293548aa4e668514|352bfb165c12f097|45a3aa7d361da6d0|1218221069||t20078.7868728544s|22c708f7a62e6d1c|12542177|rds|local|vector|||1.834|Participant 6 Trial P6_9 has no force data|
+data_long_calculated|stem|90a676fba5b24b52|36977e5defc94263|aa89cc279927541d|964209018||t20078.789644645s|9558d685b7805674|18747951|rds|local|vector|||238.829|number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number of items to replace is not a multiple of replacement length. number o|
+velocity_ANVOA|stem|734f7ede4e539738|86f352ffdc2b1cb5|aa92f4e41945a243|186725231||t20078.7896595333s|458efa8352f0a1fc|195|rds|local|vector|||1.278||
+average_force_Regression|stem|a2e262c22d3800a7|9f4df7f351a300a1|180db94894e17935|2005063396||t20078.7897088572s|334ec4c391c6746c|186|rds|local|vector|||4.259||
+possible_fighting_flagged_data|stem|6c5aa1b912ef3a0c|7455597ef18eec66|a2ebef9271084f92|-1091193653||t20078.7898045564s|af016902d9b42dc6|18756672|rds|local|vector|||7.595|no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max returning Inf. no nonmissing arguments to max return|
+average_force_ANVOA|stem|3d5890fd89926bf5|e0cbba89a6b1b882|fa8fc9646d98fdb3|-662371750||t20078.7898185935s|41200f7f0df0ebd3|96|rds|local|vector|||1.204|GG Corrections not yet working|
+explore_data|stem|adff947c62ee1bbe|de044033e091d133|d303b91520bf616c|-319760588||t20078.7898733617s|fef240c3b35f4169|180|rds|local|vector|||4.729||
+max_force_Regression|stem|9f8aa4cb3cf6c4ac|78838e72742e55d8|e42389e2820b525e|148351005||t20078.7899255119s|9712f9cb4307e5f0|183|rds|local|vector|||4.503||
+max_force_ANVOA|stem|e74bac634d3eb1a8|226a09d53648025f|ab7ff5b369d61441|1385852449||t20078.7899403392s|23174e8584d69801|187|rds|local|vector|||1.278||
+strategic_data_appended|stem|05e199fe88fad215|e2efbf754f1fcf5a|9d3e03a67bb9c35e|93320221||t20078.7899488321s|5b97b27101e3d530|18770422|rds|local|vector|||0.027||
+all_trials_force_by_proximity_plots|stem|17656ca132f3e9f7|2e570250b33f5ae8|990aeadfbf3a80de|-1429141143||t20078.7902282746s|a1c456b03adbfbf8|44|rds|local|vector|||24.135|Removed 114 rows containing missing values or values outside the scale rangegeom_point.|
+all_trials_force_plots|stem|17656ca132f3e9f7|64525d6e13a98b26|bc2a88f59271a67f|1788925748||t20078.7905139937s|a1c456b03adbfbf8|44|rds|local|vector|||24.683|Removed 114 rows containing missing values or values outside the scale rangegeom_point.|
+all_trials_velocity_plots|stem|17656ca132f3e9f7|7b9096a80cb40ca6|7f2e728ef8cfeb81|350837733||t20078.79072158s|a1c456b03adbfbf8|44|rds|local|vector|||17.932|Removed 114 rows containing missing values or values outside the scale rangegeom_point.|
+strategic_LME_analysis_results|stem|d03929053b23dfa9|a713b0e22bed79f2|86d6d8e051fe1b63|664286812||t20078.7907831605s|f12a2f0b36706ac3|19300424|rds|local|vector|||4.512||
+strategic_LME_analysis_only_haptic_results|stem|ee01796f324373b6|020d032660f45073|302249057006f9db|389923158||t20078.7908355155s|4c8c4ccfc20faf0c|19084711|rds|local|vector|||3.735|the standard deviation is zero|

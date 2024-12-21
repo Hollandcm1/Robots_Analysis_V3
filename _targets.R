@@ -217,6 +217,11 @@ list(
   tar_target(
     name = explore_data,
     command = explore_data_long(data_long_calculated)
+  ), 
+
+  tar_target(
+    name = all_trials_velocity_plots,
+    command = plot_all_trials_velocity(possible_fighting_flagged_data, maps)
   )
   
 )

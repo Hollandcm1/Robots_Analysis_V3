@@ -40,6 +40,11 @@ participant_error_correction <- function(compiled_data, codes_participant_condit
     if (p_num == 4) {
       #browser()
     }
+
+    if (p_num == 9) {
+      # exclude entierly
+      tmp[["participant9_env11_rot0.mat"]] <- NULL
+    }
     
     for (name in list_names) {
       
