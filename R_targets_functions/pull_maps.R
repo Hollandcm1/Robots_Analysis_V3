@@ -10,6 +10,9 @@
 #' @importFrom here here
 #' @importFrom Rmatlab readMat R.matlab
 #' @export
+
+library(stringr)
+
 pull_maps <- function(codes_participant_conditions, codes_conditions, environments) {
   
   # create environment list we can manipulate
@@ -68,7 +71,16 @@ pull_maps <- function(codes_participant_conditions, codes_conditions, environmen
     }
     
   }
-  
+
+  # check if maps has env25
+  if (!("env25" %in% names(maps))) {
+    # warning
+    print("env25 not found, loading from csv")
+    # read csv for map env25
+    map <- read.csv(here('data', 'processed', 'maps', 'env25.csv'))
+    maps$env25 <- map
+  }
+
   return(maps)
   
 }

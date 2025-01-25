@@ -10,7 +10,8 @@ library(targets)
 tar_option_set(
   packages = c("tibble", "R.matlab", "here", "openxlsx", "dplyr", "stringr", 
                "ggplot2", "tidyr", "purrr", "flexplot", "lme4", "sjPlot", "zoo", 
-               "grid", "cowplot", "readxl","lmerTest", "ggbeeswarm") # Packages that your targets need
+               "grid", "cowplot", "readxl","lmerTest", "ggbeeswarm"), # Packages that your targets need
+  error = "continue"
 )
 
 # Run the R scripts in the R/ folder with your custom functions:

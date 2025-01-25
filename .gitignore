@@ -29,3 +29,4 @@ data/codebook_exp2/*.xlsx
 *.png
 Rplots.pdf
 Rplots.pdf
+/_targets

@@ -5,7 +5,10 @@
 # path length
 # near object (eventually)
 
-#data <- data_long
+library(dplyr)
+library(here)
+
+# data <- tar_read(data_long)
 
 data_long_calculations <- function(data, maps) {
 
