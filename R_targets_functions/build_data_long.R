@@ -53,7 +53,7 @@ build_data_long <- function(data, codes) {
       dat$force_y <- force[,2]
       dat$force_magnitude <- force$force_mag
       
-      # within maze data
+      # # within maze data
       within_maze <- as.data.frame(trial_data['within_maze'])
       dat$within_maze <- within_maze$within_maze
       
@@ -78,7 +78,7 @@ build_data_long <- function(data, codes) {
       # haptic data 
       condition <- trial_data[['condition']]
       haptic_row <- which(codes$Factor == 'Haptic')
-      visual_row <- which(codes$Factor == 'Visual')
+      visual_row <- which(codes$Factor == 'Frequency')
       column_name <- paste('Condition', condition)
       haptic <- codes[haptic_row, column_name]
       visual <- codes[visual_row, column_name]

@@ -1,7 +1,7 @@
 #' 
 
-library(ggplot2)
-library(here)
+# library(ggplot2)
+# library(here)
 # data <- tar_read(corrected_data)
 
 plot_all_trials <- function(data) {

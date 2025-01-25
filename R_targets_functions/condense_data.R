@@ -10,6 +10,9 @@
 #' @importFrom readmat readMat
 #' @importFrom dplyr select
 #' @importFrom base basename
+#' 
+
+library(R.matlab)
 
 condense_data <- function(codes_participant_conditions){
   
@@ -37,6 +40,10 @@ condense_data <- function(codes_participant_conditions){
       # check env
       if (grepl("env0", base)) {
         next # this is practice data that we don't need
+      }
+      # if filetype is xlsx, skip
+      if (grepl("xlsx", base)) {
+        next
       }
       # pull data
       tmp_data <- readMat(f)

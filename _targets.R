@@ -112,26 +112,26 @@ list(
     name = all_trials_force_by_proximity_plots,
     command = plot_all_trial_force_by_proximity(possible_fighting_flagged_data, maps)
   ), 
-  tar_target(
-    name = strategic_data,
-    command = import_strategic_data()
-  ), 
-  tar_target(
-    name = strategic_data_appended,
-    command = append_strategic_behaviour(possible_fighting_flagged_data, strategic_data)
-  ),
-  tar_target(
-    name = strategic_LME_analysis_results,
-    command = strategic_LME_analysis(strategic_data_appended)
-  ),
+  # tar_target(
+  #   name = strategic_data,
+  #   command = import_strategic_data()
+  # ), 
+  # tar_target(
+  #   name = strategic_data_appended,
+  #   command = append_strategic_behaviour(possible_fighting_flagged_data, strategic_data)
+  # ),
+  # tar_target(
+  #   name = strategic_LME_analysis_results,
+  #   command = strategic_LME_analysis(strategic_data_appended)
+  # ),
   # tar_target(
   #   name = within_maze_plotted,
   #   command = plot_within_maze(within_maze_marked_data)
   # ),
-  tar_target(
-    name = strategic_LME_analysis_only_haptic_results,
-    command = strategic_LME_analysis_only_haptic(strategic_data_appended)
-  ), 
+  # tar_target(
+  #   name = strategic_LME_analysis_only_haptic_results,
+  #   command = strategic_LME_analysis_only_haptic(strategic_data_appended)
+  # ), 
   #tar_target(
   #  report,
   #  tar_render("report.Rmd")
