@@ -4,6 +4,15 @@
 
 #data <- data
 
+# library(ggplot2)
+# library(here)
+# library(dplyr)
+# library(grid)
+# library(gridExtra)
+# library(cowplot)
+
+# data <- tar_read(possible_fighting_flagged_data)
+
 plot_all_trial_force_by_proximity <- function (data, maps) {
   
   # force proximity calculation

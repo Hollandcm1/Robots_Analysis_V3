@@ -2,6 +2,11 @@
 
 # run_Regression_average_force
 
+# library(lme4)
+
+# data <- tar_read(data_long_calculated)
+
+
 run_Regression_max_force <- function(data) {
   
   # isolate for within maze
