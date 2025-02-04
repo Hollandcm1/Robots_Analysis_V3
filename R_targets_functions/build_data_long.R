@@ -98,6 +98,10 @@ build_data_long <- function(data, codes) {
       # rotation
       rotation <- trial_data[['rotation']]
       dat$rotation <- rotation
+
+      # arithmatic
+      arithmatic <- trial_data[['arithmatic']]
+      dat$arithmatic <- arithmatic
       
       # save dat to data_long
       data_long <- rbind(data_long, dat)

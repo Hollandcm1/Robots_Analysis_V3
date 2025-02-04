@@ -6,6 +6,17 @@
 #' @examples
 #' participant_error_correction(compiled_data)
 #' 
+#' 
+
+
+# library(here)
+# library(targets)
+# library(dplyr)
+# library(stringr)
+
+# compiled_data <- tar_read(compiled_data)
+# codes_participant_conditions <- tar_read(codes_participant_conditions)
+
 participant_error_correction <- function(compiled_data, codes_participant_conditions){
   
   # initialize corrected data
@@ -122,10 +133,10 @@ participant_error_correction <- function(compiled_data, codes_participant_condit
       # }
       
       # check if anyone has too much data
-      if (length(tmp) > 32 & !participant_warned.size) {
+      if (length(tmp) > 26 & !participant_warned.size) {
         warning(paste('participant', participant_full_number, 'has too much data'))
         participant_warned.size <- TRUE
-      } else if (length(tmp) < 32 & !participant_warned.size) {
+      } else if (length(tmp) < 26 & !participant_warned.size) {
         warning(paste('participant', participant_full_number, 'has too little data'))
         participant_warned.size <- TRUE
       } 
