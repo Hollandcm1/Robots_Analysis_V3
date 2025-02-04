@@ -94,13 +94,21 @@ list(
     command = run_ANOVA_velocity(data_long_calculated)
   ), 
   tar_target(
-    name = average_force_Regression,
-    command = run_Regression_average_force(data_long_calculated)
+    name = time_ANVOA,
+    command = run_ANOVA_time(data_long_calculated)
   ),
   tar_target(
-    name = max_force_Regression,
-    command = run_Regression_max_force(data_long_calculated)
+    name = proximity_ANVOA,
+    command = run_ANOVA_proximity(data_long_calculated)
   ),
+  # tar_target(
+  #   name = average_force_Regression,
+  #   command = run_Regression_average_force(data_long_calculated)
+  # ),
+  # tar_target(
+  #   name = max_force_Regression,
+  #   command = run_Regression_max_force(data_long_calculated)
+  # ),
   tar_target(
     name = possible_fighting_flagged_data,
     command = flag_possible_fighting(data_long_calculated)
@@ -223,6 +231,18 @@ list(
   tar_target(
     name = all_trials_velocity_plots,
     command = plot_all_trials_velocity(possible_fighting_flagged_data, maps)
+  ),
+
+  ################
+  ### Workload ###
+  ################
+  tar_target(
+    name = workload_data,
+    command = pull_workload(codes_participant_conditions, codes_conditions)
+  ),
+  tar_target(
+    name = workload_ANOVA,
+    command = run_ANOVA_workload(workload_data)
   )
   
 )
