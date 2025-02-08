@@ -243,6 +243,22 @@ list(
   tar_target(
     name = workload_ANOVA,
     command = run_ANOVA_workload(workload_data)
+  ), 
+
+  ##############
+  ### 3-back ###
+  ##############
+  tar_target(
+    name = three_back_data,
+    command = import_three_back()
+  ),
+  tar_target(
+    name = summary_three_back_data,
+    command = format_three_back(three_back_data)
+  ),
+  tar_target(
+    name = three_back_data_with_codes,
+    command = append_codes_to_three_back(summary_three_back_data, codes_participant_conditions, codes_conditions)
   )
   
 )
