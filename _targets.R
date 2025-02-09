@@ -259,6 +259,18 @@ list(
   tar_target(
     name = three_back_data_with_codes,
     command = append_codes_to_three_back(summary_three_back_data, codes_participant_conditions, codes_conditions)
+  ), 
+  tar_target(
+    name = three_back_data_explored,
+    command = explore_three_back_data(three_back_data_with_codes)
+  ),
+  tar_target(
+    name = three_back_data_with_composites,
+    command = calculate_three_back_composites(three_back_data_with_codes)
+  ),
+  tar_target(
+    name = three_back_data_composites_explored,
+    command = explore_three_back_composites(three_back_data_with_composites)
   )
   
 )
