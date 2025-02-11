@@ -244,6 +244,10 @@ list(
     name = workload_ANOVA,
     command = run_ANOVA_workload(workload_data)
   ), 
+  tar_target(
+    name = workload_data_explored,
+    command = explore_workload_data(workload_data)
+  ),
 
   ##############
   ### 3-back ###

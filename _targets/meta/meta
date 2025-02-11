@@ -30,6 +30,7 @@ explore_data|stem|adff947c62ee1bbe|de044033e091d133|7303d90387db8da6|-319760588|
 explore_data_long|function|ab7b1f4af738682f|||||||||||||||
 explore_three_back_composites|function|1a3373a65d2f3f19|||||||||||||||
 explore_three_back_data|function|b9df6b55798afaaa|||||||||||||||
+explore_workload_data|function|2e9282c369b08b3d|||||||||||||||
 flag_possible_fighting|function|67e3b64cea1f8e76|||||||||||||||
 format_three_back|function|f034dfc0d6e91446|||||||||||||||
 import_codebook|function|7d7a74ddda81f55a|||||||||||||||
@@ -82,3 +83,4 @@ time_ANVOA|stem|f8de870e0a55d5bd|c7d72997aa8a9392|476daf58c87765d4|-1270044504||
 velocity_ANVOA|stem|3a5266276ccbd8fc|86f352ffdc2b1cb5|03cf9ffc61167a0d|186725231||t20123.7244862787s|11684eb95dbf8c0d|189|rds|local|vector|||0.683||
 workload_ANOVA|stem|e010fb088d0187e9|33e8cf2c0f95d43a|0bfcd8dbdef514f4|-1319110805||t20123.840780077s|3c3e0d6d1d399035|184|rds|local|vector|||0.427||
 workload_data|stem|2edaa1ec68997694|92ed4ace3b4389fa|6f7010e1eaa880dd|-419163877||t20123.8366314196s|dfb0c2e140f2de24|1895|rds|local|vector|||0.038||
+workload_data_explored|stem|18912dd42bb18152|f381832bff29381f|9465162cedcb4395|-1013334571||t20128.8972598025s|9712f9cb4307e5f0|183|rds|local|vector|||1.98|Removed 1 row containing missing values or values outside the scale rangegeom_bar.. Removed 1 row containing nonfinite outside the scale rangestat_ydensity.. Removed 1 row containing nonfinite outside the scale range stat_boxplot.. position_dodge requires nonoverlapping x intervals.. Removed 1 row containing missing values or values outside the scale rangegeom_point.. Removed 1 row containing nonfinite outside the scale range stat_bin.|
