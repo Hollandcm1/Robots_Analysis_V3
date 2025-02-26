@@ -275,6 +275,15 @@ list(
   tar_target(
     name = three_back_data_composites_explored,
     command = explore_three_back_composites(three_back_data_with_composites)
+  ),
+
+  ############
+  ### Ryan ###
+  ############
+
+  tar_target(
+    name = save_data_for_Ryan,
+    command = save_data_for_Ryan(workload_data, three_back_data_with_composites)
   )
   
 )

@@ -12,7 +12,7 @@
 #' @importFrom base basename
 #' 
 
-library(R.matlab)
+# library(R.matlab)
 
 condense_data <- function(codes_participant_conditions){
   
@@ -35,6 +35,11 @@ condense_data <- function(codes_participant_conditions){
     
     # go through each file found and append to a single file
     for (f in filenames) {
+
+      # if filename contains "discarded", continue
+      if (grepl("discarded", f)) {
+        next
+      }
       
       base <- basename(f)
       # check env
