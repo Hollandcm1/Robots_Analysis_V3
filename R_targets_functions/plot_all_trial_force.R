@@ -95,8 +95,14 @@ plot_all_trial_force <- function (data, maps) {
       # 
       # g3 <- g0 + g1
       # print(g3)
+
+      save_path <- here('output', 'figures_force', paste("participant", p_num))
+      # make directory if it doesn't already exist
+      if (!dir.exists(save_path)) {
+        dir.create(save_path)
+      }
       
-      ggsave(here('output', 'figures_force', paste("participant", p_num), paste("_trial", t_num, ".png")), plot = final_plot, device = "png")
+      ggsave(here(save_path, paste("_trial", t_num, ".png")), plot = final_plot, device = "png")
       
     }
     

@@ -65,8 +65,14 @@ plot_all_trials_velocity <- function(data, maps) {
       final_plot <- ggdraw(final_plot) +
         draw_label(paste("Haptic:", haptic, "Visual:", visual), x = 0.9, y=0.9, hjust = 1)
 
+      save_path <- here("output", "figures_velocity_v2", paste("participant", p_num))
+      # make directory if it doesn't exist
+      if (!dir.exists(save_path)) {
+        dir.create(save_path)
+      }
+
       # save 
-      ggsave(here("output", "figures_velocity_v2", paste("participant", p_num), paste0("P", p_num, "_T", t_num, "_velocity.png")), final_plot)
+      ggsave(here(save_path, paste0("P", p_num, "_T", t_num, "_velocity.png")), final_plot)
         
         
     }
