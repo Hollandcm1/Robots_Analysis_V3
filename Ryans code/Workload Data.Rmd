@@ -1,0 +1,193 @@
+---
+title: "Workload"
+author: "Ryan Lupul"
+date: "2025-03-05"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+```{r}
+
+library(here)
+
+workload_data = read.csv(here("output", "Ryans_dataframes", "workload.csv"))
+
+
+#workloadsum
+
+Arithmatic_1 = subset (workload_data , arithmatic == 1)
+Arithmatic_0 = subset (workload_data, arithmatic == 0)
+
+
+mean_workload_1 = mean (Arithmatic_1$WorkloadSum)
+mean_workload_0 = mean (Arithmatic_0$WorkloadSum, na.rm = TRUE)
+
+sd_workload_1 = sd (Arithmatic_1$WorkloadSum)
+sd_workload_0 = sd (Arithmatic_0$WorkloadSum, na.rm = TRUE)
+
+WorkloadSum_Arithmatic =( Arithmatic_1$WorkloadSum)
+
+WorkloadSum_No_Arithmatic = (Arithmatic_0$WorkloadSum)
+
+library(rcompanion)
+plotNormalHistogram(WorkloadSum_Arithmatic, xlab = "total workload", ylab = "frequency", main = "Frequency of Total Workload, Arithmatic", breaks = 30)
+
+plotNormalHistogram(WorkloadSum_No_Arithmatic, xlab ="Total workload", ylab = "frequency", main = "frequency of total workload, No Arith", breaks = 30 )
+
+library(ggplot2)
+# plot histogram
+ggplot(Arithmatic_1, aes(x=WorkloadSum)) +
+  geom_histogram(binwidth=1) +
+  labs(title="Histogram of WorkloadSum", x="WorkloadSum", y="Frequency") +
+  theme_minimal()
+
+ggplot(Arithmatic_0, aes(x=WorkloadSum)) +
+    geom_histogram(binwidth=1) +
+    labs(title="Histogram of WorkloadSum", x="WorkloadSum", y="Frequency") +
+    theme_minimal()
+
+
+#Workload100
+
+mean_workload100_1 = mean(Arithmatic_1$Workload100)
+mean_workload100_0 = mean(Arithmatic_0$Workload100, na.rm=TRUE)
+
+
+sd_workload100_1 = sd(Arithmatic_1$Workload100)
+sd_workload100_0 = sd(Arithmatic_0$Workload100, na.rm = TRUE)
+
+
+
+Workload100_Arithmatic = (Arithmatic_1$Workload100)
+Workload100_No_Arithmatic = (Arithmatic_0$Workload100)
+
+plotNormalHistogram(Workload100_Arithmatic, xlab="Workload 100", ylab = "Frequency", main ="Arithmatic_Workload100")
+
+plotNormalHistogram(Workload100_No_Arithmatic, xlab = "Workload 100, No Arithmatic", ylab ="Frequency", main ="No Arithmatic, Workload100")
+
+
+ggplot(Arithmatic_1, aes(x=Workload100)) +
+  geom_histogram(binwidth=1) +
+  labs(title="Histogram of Workload100", x="Workload100", y="Frequency") +
+  theme_minimal()
+
+ggplot(Arithmatic_0, aes(x=Workload100)) + 
+    geom_histogram(binwidth=1) +
+    labs(title="Histogram of Workload100", x="Workload100", y="Frequency") +
+    theme_minimal()
+
+
+#install.packages("lme4")
+
+library(lme4)
+
+
+Arithmatic_1$Haptic <- as.factor(Arithmatic_1$haptic)
+Arithmatic_1$Visual <- as.factor(Arithmatic_1$visual)
+Arithmatic_1$Participant <- as.factor (Arithmatic_1$Participant)
+
+# model1 = lmer(Workload_Arithmatic~Haptic*Visual +(1|Participant), data =Arithmatic_1, REML= FALSE)
+
+model1 = lmer(Workload~ Haptic * Visual +(1|Participant), data =Arithmatic_1, REML= FALSE)
+
+model1 = lmer(Workload~ Haptic * Visual +(1|Participant), data =Arithmatic_1)
+
+summary (model1)
+
+plot_model(model1, type = "int")
+# plot_model(model1, type = "eff")
+
+model2 <- lmer(Workload ~ Visual + (1|Participant), data = Arithmatic_1)
+
+summary(model2)
+
+tab_model(model2)
+
+plot_model(model2, type = "pred")
+
+
+
+library(sjPlot)
+tab_model(model1)
+
+library(flexplot)
+flexplot(
+  data = Arithmatic_1,
+  formula = Workload ~ Haptic + Visual
+)
+
+# ggplot(data = Arithmatic_1, aes(x = Haptic, y = Workload, group = Participant, color = Visual)) +
+#   geom_line() +
+#   theme_minimal()
+
+# calculate mean workload by participant
+library(dplyr)
+mean_workload_by_participant <- Arithmatic_1 %>%
+  group_by(Participant, haptic, visual) %>%
+  summarize(mean_workload = mean(Workload, na.rm = TRUE))
+
+# convert haptic and visual to factors
+mean_workload_by_participant$haptic = as.factor(mean_workload_by_participant$haptic)
+mean_workload_by_participant$visual = as.factor(mean_workload_by_participant$visual)
+
+flexplot(
+  data = mean_workload_by_participant,
+  formula = mean_workload ~ haptic + visual
+)
+
+mean_workload_by_participant_by_haptic <- mean_workload_by_participant %>%
+  group_by(Participant, haptic) %>%
+  summarize(mean_workload = mean(mean_workload, na.rm = TRUE))
+ggplot(data = mean_workload_by_participant_by_haptic, aes(x = haptic, y = mean_workload, group = Participant)) +
+  geom_line() +
+  theme_minimal()
+
+mean_workload_by_participant_by_visual <- mean_workload_by_participant %>%
+  group_by(Participant, visual) %>%
+  summarize(mean_workload = mean(mean_workload, na.rm = TRUE))
+ggplot(data = mean_workload_by_participant_by_visual, aes(x = visual, y = mean_workload, group = Participant)) +
+  geom_line() +
+  theme_minimal()
+
+
+# violin boxplot of workload by visual
+library(ggbeeswarm)
+ggplot(data = mean_workload_by_participant_by_visual, aes(x = visual, y = mean_workload, fill = visual)) +
+  geom_violin(alpha = 0.5) +
+  geom_boxplot(width = 0.3) +
+  geom_beeswarm() +
+  theme_minimal() +
+  ylim(0, 10)
+
+
+
+model3 <- lmer(Workload ~ visual * haptic * arithmatic + (1|Participant), data = workload_data)
+
+summary(model3)
+tab_model(model3)
+
+flexplot(
+  data = workload_data,
+  formula = Workload ~ visual + haptic | arithmatic
+)
+
+```
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
