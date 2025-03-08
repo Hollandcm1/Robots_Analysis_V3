@@ -1,0 +1,293 @@
+---
+title: "Workload"
+author: "Ryan Lupul"
+date: "2025-03-05"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+```{r}
+
+workload_data = read.csv("workload.csv")
+
+
+#workloadsum
+
+Arithmatic_1 = subset (workload_data , arithmatic == 1)
+Arithmatic_0 = subset (workload_data, arithmatic == 0)
+
+
+mean_workload_1 = mean (Arithmatic_1$WorkloadSum)
+mean_workload_0 = mean (Arithmatic_0$WorkloadSum, na.rm = TRUE)
+
+sd_workload_1 = sd (Arithmatic_1$WorkloadSum)
+sd_workload_0 = sd (Arithmatic_0$WorkloadSum, na.rm = TRUE)
+
+WorkloadSum_Arithmatic = ( Arithmatic_1$WorkloadSum)
+
+WorkloadSum_No_Arithmatic = (Arithmatic_0$WorkloadSum)
+
+library(rcompanion)
+plotNormalHistogram(WorkloadSum_Arithmatic, xlab = "total workload", ylab = "frequency", main = "Frequency of Total Workload, Arithmatic", breaks = 30)
+
+plotNormalHistogram(WorkloadSum_No_Arithmatic, xlab ="Total workload", ylab = "frequency", main = "frequency of total workload, No Arith", breaks = 30 )
+
+
+
+#Workload100
+
+mean_workload100_1 = mean(Arithmatic_1$Workload100)
+mean_workload100_0 = mean(Arithmatic_0$Workload100, na.rm=TRUE)
+
+
+sd_workload100_1 = sd(Arithmatic_1$Workload100)
+sd_workload100_0 = sd(Arithmatic_0$Workload100, na.rm = TRUE)
+
+
+
+Workload100_Arithmatic = (Arithmatic_1$Workload100)
+Workload100_No_Arithmatic = (Arithmatic_0$Workload100)
+
+plotNormalHistogram(Workload100_Arithmatic, xlab="Workload 100", ylab = "Frequency", main ="Arithmatic_Workload100")
+
+plotNormalHistogram(Workload100_No_Arithmatic, xlab = "Workload 100, No Arithmatic", ylab ="Frequency", main ="No Arithmatic, Workload100")
+
+#install.packages("lme4")
+
+library(lme4)
+
+
+Arithmatic_1$Haptic <- as.factor(Arithmatic_1$haptic)
+Arithmatic_1$Visual <- as.factor(Arithmatic_1$visual)
+Arithmatic_1$Participant <- as.factor (Arithmatic_1$Participant)
+
+model1 = lmer(WorkloadSum_Arithmatic~Haptic*Visual +(1|Participant), data =Arithmatic_1, REML= FALSE)
+
+summary(model1)
+
+#install.packages("sjPlot")
+
+library(sjPlot)
+tab_model(model1)
+
+
+#compares arithmetic task workload with feedback conditions (combinations). Significant for visual* 
+
+```
+```{r}
+
+three_back_Data = read.csv("three_back.csv")
+
+total_arith = (three_back_Data$x_final_position)
+
+mean_total_arith = mean (three_back_Data$x_final_position, na.rm = TRUE) 
+sd_total_arith = sd(three_back_Data$x_final_position, na.rm = TRUE)
+
+library(rcompanion)
+
+plotNormalHistogram(total_arith, xlab = "Integers listed", ylab = "Frequency", main = "Frequency of numbers listed", breaks = 20)
+
+library(lme4)
+
+three_back_Data$haptic <- as.factor(three_back_Data$haptic)
+three_back_Data$visual <- as.factor(three_back_Data$visual)
+three_back_Data$Participant <- as.factor(three_back_Data$participant)
+
+model2 = lmer(total_arith~haptic*visual +(1|Participant), data =three_back_Data, REML= FALSE)
+
+library(sjPlot)
+
+tab_model(model2)
+#no significance
+three_back_Data$predicted <- predict(model2, newdata = three_back_Data, re.form = NA)
+
+ggplot(three_back_Data, aes(x = haptic, y = predicted, color = visual, group = visual)) +
+  geom_line(size = 1) +     
+  geom_point(size = 3) +     
+  labs(
+    x = "Haptic Feedback",
+    y = "Final Integer",
+    color = "Visual Feedback",
+    title = "Interaction Effect of Haptic and Visual Feedback on Final Integer"
+  ) +
+  theme_minimal()
+
+ggplot(three_back_Data, aes(x = haptic, y = x_final_position, fill = visual)) +
+  geom_boxplot(alpha = 0.7) +
+  labs(
+    x = "Haptic Condition",
+    y = "Final Integer",
+    fill = "Visual Condition",
+    title = "Distribution of final integer reached by Haptic and Visual Conditions"
+  ) +
+  theme_minimal()
+
+
+#compares feedback and feedback interactions (combinations) with final number reached. 
+
+prop_correct = (three_back_Data$proportion_correct)
+
+mean_prop = mean (three_back_Data$proportion_correct, na.rm = TRUE)
+sd_prop = sd(three_back_Data$proportion_correct, na.rm = TRUE)
+
+plotNormalHistogram(prop_correct, xlab = "proportion correct", ylab = "frequency", main= "Frequency of proportion correct", breaks = 20)
+
+three_back_Data$haptic <- as.factor(three_back_Data$haptic)
+three_back_Data$visual <- as.factor(three_back_Data$visual)
+three_back_Data$Participant <- as.factor(three_back_Data$participant)
+
+model3 = lmer(prop_correct~haptic*visual +(1|Participant), data =three_back_Data, REML= FALSE)
+
+
+#significance in haptic*visual
+
+library(sjPlot)
+
+tab_model(model3)
+
+library(ggplot2)
+
+library(dplyr)
+
+#compares proportion correct against feedback (haptic, visual & Both) *significant for both (haptic, visual) 
+
+three_back_Data$predicted <- predict(model3, newdata = three_back_Data, re.form = NA)
+
+ggplot(three_back_Data, aes(x = haptic, y = predicted, color = visual, group = visual)) +
+  geom_line(size = 1) +     
+  geom_point(size = 3) +     
+  labs(
+    x = "Haptic Feedback",
+    y = "Predicted Proportion Correct",
+    color = "Visual Feedback",
+    title = "Interaction Effect of Haptic and Visual Feedback on Proportion Correct"
+  ) +
+  theme_minimal()
+
+ggplot(three_back_Data, aes(x = haptic, y = prop_correct, fill = visual)) +
+  geom_boxplot(alpha = 0.7) +
+  labs(
+    x = "Haptic Condition",
+    y = "Proportion Correct",
+    fill = "Visual Condition",
+    title = "Distribution of Proportion Correct by Haptic and Visual Conditions"
+  ) +
+  theme_minimal()
+
+
+
+
+```
+
+
+```{r}
+#Performance 
+
+performance_data = read.csv("trial_summary.csv")
+
+arith = subset (performance_data, arithmatic==1)
+no_arith = subset (performance_data, arithmatic==0)
+
+
+
+library(rcompanion)
+
+plotNormalHistogram( performance_data$average_proximity, xlab = "average proximity", ylab = "frequency", main="average proximity frequency")
+
+plotNormalHistogram (performance_data$average_velocity, xlab = "average velocity", ylab ="frequency", main ="average velocity frequency")
+
+
+plotNormalHistogram (performance_data$average_time_through_maze, xlab = "Average time to complete", ylab = "frequency", main ="frequency of time to complete", breaks = 100)
+
+vel_arith = arith$average_velocity
+prox_arith = arith$average_proximity
+TTC_arith = arith$average_time_through_maze
+
+
+library(lme4)
+
+arith$Haptic <- as.factor(arith$haptic)
+arith$Visual <- as.factor(arith$visual)
+arith$Participant <- as.factor (arith$participant)
+
+model4 = lmer(vel_arith~Haptic*Visual +(1|Participant), data =arith, REML= FALSE)
+
+
+library(sjPlot)
+
+tab_model(model4)
+#Significance in visual in average velocity in arithmatic condition
+
+library(ggplot2)
+
+library(dplyr)
+
+arith$predicted <- predict(model4, newdata = arith, re.form = NA)
+
+ggplot(arith, aes(x = haptic, y = predicted, color = visual, group = visual)) +
+  geom_line(size = 1) +     
+  geom_point(size = 3) +     
+  labs(
+    x = "Haptic Feedback",
+    y = "Predicted Average velocity",
+    color = "Visual Feedback",
+    title = "Interaction Effect of Haptic and Visual Feedback on average velocity in dual task"
+  ) +
+  theme_minimal()
+
+ggplot(arith, aes(x = haptic, y = average_velocity, fill = visual)) +
+  geom_boxplot(alpha = 0.7) +
+  labs(
+    x = "Haptic Condition",
+    y = "Average Velocity",
+    fill = "Visual Condition",
+    title = "Average velocity in dual task by Haptic and Visual Conditions"
+  ) +
+  theme_minimal()
+
+
+model5 = lmer(prox_arith~haptic*visual + (1|Participant), data = arith, REML = FALSE)
+
+tab_model (model5)
+
+#No significance 
+
+model6 = lmer(TTC_arith~haptic*visual + (1|Participant), data = arith, REML = FALSE)
+tab_model (model6)
+
+#visual is significant in TTC under arithmatic task
+
+ggplot(arith, aes(x = haptic, y = average_time_through_maze, fill = visual)) +
+  geom_boxplot(alpha = 0.7) +
+  labs(
+    x = "Haptic Condition",
+    y = "Average Time to Complete Maze",
+    fill = "Visual Condition",
+    title = "Average time to complete maze in dual task by Haptic and Visual Conditions"
+  ) +
+  theme_minimal()
+
+
+
+```
+
+
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
