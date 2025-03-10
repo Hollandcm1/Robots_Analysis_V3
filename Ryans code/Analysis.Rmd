@@ -16,8 +16,52 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 ```{r}
 
-workload_data = read.csv("workload.csv")
+library(here)
+library(lme4)
+library(sjPlot)
+library(ggplot2)
 
+workload_data = read.csv(here("output", "Ryans_dataframes", "workload.csv"))
+
+# convert needed thigns to factors
+workload_data$arithmatic <- as.factor(workload_data$arithmatic)
+workload_data$haptic <- as.factor(workload_data$haptic)
+workload_data$visual <- as.factor(workload_data$visual)
+
+model <- lmer(WorkloadSum ~ arithmatic * haptic * visual + (1|Participant), data = workload_data)
+tab_model(model)
+
+
+model <- lmer(WorkloadSum ~ arithmatic + (1|Participant), data = workload_data)
+tab_model(model)
+
+# ggplot(workload_data, aes(x = arithmatic, y = WorkloadSum, color = haptic, group = haptic, fill = haptic)) +
+#   geom_violin() +
+#   geom_boxplot() + 
+#   geom_point() +     
+#   labs(
+#     x = "Arithmatic Task",
+#     y = "Total Workload",
+#     color = "Haptic Feedback",
+#     title = "Interaction Effect of Arithmatic Task and Haptic Feedback on Total Workload"
+#   ) +
+#   theme_minimal() +
+#   facet_wrap(~visual)
+
+library(ggbeeswarm)
+
+# workload by arithmatic boxplot
+ggplot(workload_data, aes(x = arithmatic, y = WorkloadSum, fill = arithmatic)) +
+  geom_violin(alpha = 0.5) +
+  geom_boxplot(alpha = 0.3, width = 0.4) +
+  geom_beeswarm() +
+  labs(
+    x = "Arithmatic Task",
+    y = "Total Workload",
+    title = "Total Workload by Arithmatic Task and Haptic Feedback"
+  ) +
+  theme_minimal() + 
+  ylim(0, 60)
 
 #workloadsum
 
