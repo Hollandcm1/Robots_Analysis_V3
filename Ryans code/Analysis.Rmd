@@ -325,6 +325,93 @@ ggplot(arith, aes(x = haptic, y = average_time_through_maze, fill = visual)) +
 
 
 
+```{r}
+performance_data = read.csv("output/Ryans_dataframes/trial_summary.csv")
+
+library(dplyr)
+library(ggplot2)
+
+# convert things to factors as needed
+performance_data$arithmatic <- as.factor(performance_data$arithmatic)
+performance_data$haptic <- as.factor(performance_data$haptic)
+performance_data$visual <- as.factor(performance_data$visual)
+
+# Compute mean and standard error for each factor combination
+summary_stats <- performance_data %>%
+  group_by(arithmatic, haptic, visual) %>%
+  summarise(
+    mean_velocity = mean(average_velocity, na.rm = TRUE),
+    se_velocity = sd(average_velocity, na.rm = TRUE) / sqrt(n())
+  )
+
+
+arith_0 <- performance_data %>%
+  filter(arithmatic == 0)
+
+arith_0_summary <- arith_0 %>%
+  group_by(visual, haptic, participant) %>%  # Group by participant, visual condition, and haptic condition
+  summarize(average_velocity = mean(average_velocity), .groups = "drop")
+  
+
+
+performance_data = read.csv("output/Ryans_dataframes/trial_summary.csv")
+
+arith_1 <- performance_data %>%
+  filter(arithmatic == 1)
+
+arith_1_summary <- arith_1 %>%
+  group_by(visual, haptic, participant) %>%  # Group by participant, visual condition, and haptic condition
+  summarize(average_velocity = mean(average_velocity), .groups = "drop")
+
+p <- ggplot(arith_1_summary, aes(x = visual, y = average_velocity, fill = haptic, group = haptic)) +
+  geom_bar(stat = "summary", fun = "mean", position = "dodge", alpha = 0.7) +
+  geom_errorbar(stat = "summary", fun.data = mean_se, position = position_dodge(0.9), width = 0.2) +
+  geom_point(position = position_jitterdodge(jitter.width = 0.2, dodge.width = 0.9), 
+             size = 1.5, alpha = 0.5) + 
+  labs(
+    x = "Visual Frequency",
+    y = "Average Velocity (m/s)",
+    fill = "Haptic",
+    title = "Average Velocity in Dual Task"
+  ) +
+  scale_y_continuous(limits = c(0, 1), breaks = seq(0, 1, by = 0.2)) +
+  theme_minimal()
+
+ggsave("output/Ryans_dataframes/velocity_plot.png", p, width = 8, height = 6, units = "in", dpi = 300)
+
+
+```
+
+```{r}
+
+three_back_Data = read.csv("output/Ryans_dataframes/three_back.csv")
+
+# convert to factors
+three_back_Data$haptic <- as.factor(three_back_Data$haptic)
+three_back_Data$visual <- as.factor(three_back_Data$visual)
+three_back_Data$participant <- as.factor(three_back_Data$participant)
+
+three_back_summary <- three_back_Data %>%
+  group_by(haptic, visual, participant) %>%  # Group by participant, visual condition, and haptic condition
+  summarize(proportion_correct = mean(proportion_correct), na.rm = TRUE, .groups = "drop")
+
+# boxplot and violin
+p <- ggplot(three_back_summary, aes(x = haptic, y = proportion_correct, fill = visual)) +
+  geom_violin(alpha = 0.5, position = position_dodge(0.9)) +  # Ensures proper dodge
+  geom_boxplot(width = 0.3, position = position_dodge(0.9), outlier.shape = NA) +  # Aligns boxplots properly
+  geom_jitter(position = position_jitterdodge(jitter.width = 0.2, dodge.width = 0.9), alpha = 0.5) +  # Jittered points
+  labs(
+    x = "Haptic Condition",
+    y = "Proportion Correct",
+    fill = "Visual Condition",
+    title = "Distribution of Proportion Correct by Haptic and Visual Conditions"
+  ) +
+  theme_minimal()
+
+ggsave("output/Ryans_dataframes/proportion_correct_plot.png", p, width = 8, height = 6, units = "in", dpi = 300)
+
+```
+
 
 ## Including Plots
 
