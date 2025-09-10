@@ -284,6 +284,15 @@ list(
   tar_target(
     name = save_data_for_Ryan_output,
     command = save_data_for_Ryan(workload_data, three_back_data_with_composites, data_long_calculated)
+  ),
+
+  #####################
+  ### Final Figures ###
+  #####################
+
+  tar_target(
+    name = final_figures,
+    command = make_final_figures() 
   )
   
 )
